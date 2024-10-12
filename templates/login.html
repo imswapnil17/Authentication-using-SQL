@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alata&family=Archivo+Black&display=swap');
+        </style>
+    <style>
+        
+        *{
+            
+            font-family: "Alata", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            height: 100%;
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        }html{
+            height: 100%;
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        input{
+            box-shadow:10px 20px 7px 0px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            display: block;
+
+            margin-top: 30px;
+            
+        }
+        input:active{
+            border: none;
+        }
+        button{
+            border: none;
+            transition: all 1s;
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            display: block;
+            width: 100px;
+            height: 50px;
+            margin-top: 20px;
+
+        }
+        button:hover{
+            border: none;
+            transition: all 1s;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: blue;
+            display: block;
+            width: 100px;
+            height: 50px;
+            margin-top: 20px;
+
+            
+        }
+        .shake{
+            animation: 0.5s alternate shake1 ease;
+
+        }
+        @keyframes shake1 {
+            0%{
+                transform: translateX(0px);
+            }
+            25%{
+                transform: translateX(30px);
+
+            }
+            50%{
+                transform: translateX(-30px);
+
+            }
+            75%{
+                transform: translateX(30px);
+
+            }
+            100%{
+                transform: translateX(0px);
+
+            } 
+
+        }
+        #pass_container{
+            float: right;
+            background-color: rgba(0, 0, 0, 0.356);
+            color: white;
+            display: flex;
+            position: absolute;
+            left:410px;
+            right:  0;
+            width: 260px;
+            text-align: center;
+        }
+        .pass_con{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #user_inv{
+            float: bottom;
+            color: rgba(255, 0, 0, 0.945);
+            display: flex;
+            position: absolute;
+            left:190px;
+            top: 239px;
+            font-weight: 100;
+            right:  0;
+            align-self: center;
+            text-align: center;
+        }
+        #username_con{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 500px;
+            height: 100px;
+        }
+        .not_available{
+            color: red;
+            content: "";
+        }
+        #title{
+            color: white;
+            text-shadow: rgb(0, 0, 0) 4px 2px 11px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/Dashboard" method="post" id="form" autocomplete="new-password">
+            <h1 id="title">Login</h1>
+                <div id="username_con">
+                    <input name="username_login" type="text"  id="username" class="input2" placeholder="username">
+                    <h4 id="user_inv" class="" >{{user_found}}</h4> 
+                </div>
+            <p style="color:red;margin-top: -20px;"></p>
+           <div class="pass_con">
+            <input type="password" name="password_login" id="password" placeholder="Passsword" class="input3">
+           </div>
+            <button type="submit" name="submit" id="submit">Login</button>
+            <h4 style="color: white;">Not Registered Yet? <a href="/"  style="text-decoration: none;color: rgb(55, 0, 255);">Sign Up</a></h4>
+        </form>
+    </div>
+    <div class="data" style="visibility: hidden;" style="display: none;">{{data}}</div>
+</body>
+<script src="/static/login.js"></script>
+</html>

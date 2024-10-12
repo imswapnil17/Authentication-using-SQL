@@ -1,0 +1,9 @@
+.invalid{
+    background-color: #ff000047;
+    color: white;
+    
+}
+.invalid::placeholder{
+    color: white;
+    
+}

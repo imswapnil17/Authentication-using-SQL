@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alata&family=Archivo+Black&display=swap');
+        </style>
+    <style>
+        
+        *{
+            
+            font-family: "Alata", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            height: 100%;
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        }html{
+            height: 100%;
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        input{
+            box-shadow:10px 20px 7px 0px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            
+        }
+        input:active{
+            border: none;
+        }
+        button{
+            border: none;
+            transition: all 1s;
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            display: block;
+            width: 100px;
+            height: 50px;
+            margin-top: 20px;
+
+        }
+        button:hover{
+            border: none;
+            transition: all 1s;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: blue;
+            display: block;
+            width: 100px;
+            height: 50px;
+            margin-top: 20px;
+
+            
+        }
+        .shake{
+            animation: 0.5s alternate shake1 ease;
+
+        }
+        @keyframes shake1 {
+            0%{
+                transform: translateX(0px);
+            }
+            25%{
+                transform: translateX(30px);
+
+            }
+            50%{
+                transform: translateX(-30px);
+
+            }
+            75%{
+                transform: translateX(30px);
+
+            }
+            100%{
+                transform: translateX(0px);
+
+            } 
+
+        }
+        #pass_container{
+            float: right;
+            background-color: rgba(0, 0, 0, 0.356);
+            color: white;
+            display: flex;
+            position: absolute;
+            left:410px;
+            right:  0;
+            width: 260px;
+            text-align: center;
+        }
+        .pass_con{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #user_inv{
+            float: right;
+            color: rgb(21, 255, 0);
+            display: flex;
+            position: absolute;
+            left:410px;
+            top: 155px;
+            font-weight: 100;
+            right:  0;
+            align-self: center;
+            text-align: center;
+        }
+        #username_con{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 500px;
+            height: 100px;
+        }
+        .not_available{
+            color: red;
+            content: "";
+        }
+        #title{
+            color: white;
+            text-shadow: rgb(0, 0, 0) 4px 2px 11px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post" id="form" autocomplete="new-password">
+            <h1 id="title">Sign Up </h1>
+            <input name="name" type="text" placeholder="Name" id="name" class="input1">
+                <div id="username_con">
+                           
+                    <input name="username" style="text-transform: lowercase;" type="text"  id="username" class="input2" placeholder="username" onkeyup="this.valeu = this.value.toLowerCase()">
+                    <h4 id="user_inv" style="display:none" class="" >Available &#10003;</h4> 
+                </div>
+            <p style="color:red;margin-top: -20px;"></p>
+           <div class="pass_con">
+            <input type="password" name="password" id="password" placeholder="Passsword" class="input3">
+            <div id="pass_container" style="display: none;">
+                <h3 id="pass_inv">The password should have <br><i>8</i> minimum and  <i>12</i> maximum characters.<br></h3>
+            </div>
+           </div>
+            <input type="email" name="email" id="email" placeholder="Email" class="input4">
+            <button type="submit" name="submit" id="submit">Sign Up</button>
+            <h4 style="color: white;">Already Registered? <a href="/login"  style="text-decoration: none;color: rgb(55, 0, 255);">Login</a></h4>
+        </form>
+    </div>
+</body>
+
+<script src="/static/script.js"></script>
+<script src="/static/json.js"></script> 
+
+</html>
